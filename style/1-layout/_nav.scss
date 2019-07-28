@@ -4,6 +4,7 @@ nav {
     left: 0;
     width: 100px;
     height: 100%;
+    z-index: 10000;
 
     }
 .nav_item {
@@ -12,11 +13,20 @@ nav {
     height: 100px;
     margin: 10px 0;
     list-style: none;
-
+border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: 0.2s ease all;
+
+    &:hover {
+    // -webkit-animation: navigation-hover 0.4s ease;
+    // animation: navigation-hover 0.4s ease;
+    @include animation('nav-hov .2s');
+    cursor:pointer; 
+
+}
     
 
 
