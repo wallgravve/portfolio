@@ -1,0 +1,28 @@
+.container-fluid {
+    width: 100vh;
+    height: auto;
+    position: absolute;
+    top: 0;
+
+.button__holder {
+    transform: translate(290px, 155px);
+
+}
+    
+}
+.content__holder {
+
+    transform: translate(280px, 155px);
+
+
+}
+.img__holder {
+    min-width: 400px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    z-index: -20;;
+    background-image:url("/portfolio/images/Łukasz..jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
