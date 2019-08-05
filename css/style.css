@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Domain";
-    src: url("DomainDisplay.ttf") format("ttf");
+    src: url("./fonts/DomainDisplay.ttf") format("ttf");
   }
 :root {
     --primary:  #f03e40;
@@ -50,10 +50,33 @@
 
 .navbar-b {
     transition: all .5s ease-in-out;
-    background-color: transparent;
     padding-top: 1.563rem;
     padding-bottom: 1.563rem;
+  } 
+  .scrolltop-mf {
+    position: relative;
+    display: none;
   }
+  
+  .scrolltop-mf span {
+    z-index: 999;
+    position: fixed;
+    width: 42px;
+    height: 42px;
+    background-color: var(--primary);
+    opacity: .7;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-align: center;
+    color: #fff;
+    top: auto;
+    left: auto;
+    right: 30px;
+    bottom: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
   
   .navbar-b.navbar-reduce {
     box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
@@ -189,6 +212,8 @@
   .navbar-b .dropdown-menu .dropdown-item.active {
     background-color: var(--primary);
   }
+
+ 
   
   /*--/ Hamburger Navbar /--*/
   
@@ -406,4 +431,57 @@
   top: 1.2em;
   position: absolute;
   fill: white;
+}
+
+
+
+
+
+/* SHADOW EFFECTS */
+.box-shadow-full {
+  background: white;
+  box-shadow:0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  height: 100%;
+}
+
+
+/* SKILLS SECTION */
+.skill-card {
+  height: 300px;
+
+  /* -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  opacity: 1;
+  outline: 0;
+  transform: translateY(0);
+  transition-delay: 0s,0s,0s;
+  transition-duration: .8s,.8s,.8s;
+  transition-property: opacity,transform,-webkit-transform;
+  transition-timing-function: cubic-bezier(.19,1,.22,1),cubic-bezier(.19,1,.22,1),cubic-bezier(.19,1,.22,1); */
+}
+img {
+  width: 100px;
+  height: auto;
+}
+.head-skill {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  font-size: 8rem;
+  font-weight: 800;
+  line-height: .84375;
+  margin: 0;
+  opacity: .1;
+  outline: 0;
+
+  text-transform: uppercase;
+
+  transform: matrix(1,0,0,1,0,-20);
+}
+
+.fade-scroll-anim {
+  width: 50vw;
+  height: 50vh;
+
+  transition: background 4s;
+  border: 1px solid red;
 }

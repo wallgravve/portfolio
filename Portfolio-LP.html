@@ -11,14 +11,16 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
 
 <!-- CSS LIBRARIES -->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.css">
     <link rel="stylesheet" href="/css/style.css">
 
 
 </head>
-<body>
+<body id="page-top" class="bg-white">
     
   <!--/ Nav Star /-->
+ <header>
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll" href="#page-top">LukeFolio</a>
@@ -52,18 +54,17 @@
       </div>
     </div>
   </nav>
+ </header>
   <!--/ Nav End /-->
 
 
-  <div id="home" class="intro route bg-image" style="background-image: url(img/intro-bg.jpg)">
+ <main>
+   <section> <div id="home" class="intro route bg-image" style="background-image: url()">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
-<styles>
 
-  
-</styles>
           <h1 class="display-6 color-d">Hi, I am Lukas</h1>
           <h1  style="font-weight: 900; font-size:3.5em; position: absolute;" class="intro-subtitle">Web De<span
             class="typer"
@@ -82,11 +83,145 @@
       </div>
     </div>
   </div>
+</section>
 
+<section id="about" class="my-5 py-4">
+  <div class="container">
+    <div class="row">
+     
+      <div class="col-md-12">
+        <div><!-- REMOVED  class="box-shadow-full"  -->
+         
+        	<div class="row">
+              <div class="col-md-12 mt-4">
+                <h3 class="text-center text-primary py-1">
+About me                </h3>
+                <h3 class="text-center text-muted">
+What you need to know                </h3>
+              </div>
+            </div>
+          <div class="row pt-3 mb-5 mx-3 px-1 pb-5">
+            <div class="col-3">
+              <h5>Contact:</h5>
+              <ul>
+                <li>E-mail:</li>
+                <li>Phone:</li>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                
+              </ul>
+            </div>
+            <div class="col-3 m-auto text-center">
+                <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle" />            </div>
+            <div class="col mx-4">
+              <h5>Who am I, and how I see myself and arounding me world</h5> 
+I was born in Łódź, and currentry leave 50 km near the Łódź. I have master degree in Law from Breslau University, but
+i m not practising. I presently working as an Graphic Designer, and Web Developer at MiD-media.
+During my free time, love cooking, talking, and traveling with my closest family and friends.
+I think it is important, to have "backgraound" support from closest people, when You want to improve yourself
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <div class="contain-fluid bg-light">
+          <div class="row">
+
+            <div class="col-md-12 mt-4">
+                <h2 class="text-center text-muted head-skill">Board skills</h2>
+            
+<div class="row">
+ 
+  <div class="col-md-4 bg-light skill-card" data-scroll>
+    <div class="box-shadow-full text-center x">
+    <img src="/img/graphic-design.svg" alt="" >
+    <h5>Design</h5>
+<ul>    <li>    Photoshop
+</li>
+<li>    Corel Draw
+</li>
+<li>    Figma
+</li>
+<li>    Adobe XD
+</li></ul>
+</div>
+  </div>
+  <div class="col-md-4 bg-light skill-card">
+<div class="box-shadow-full text-center ">
+    <img src="/img/responsive.svg" alt="">
+
+    <h5>Web Development</h5>
+    <ul><li>    HTML5
+   </li>
+   <li>    CSS3
+   </li>
+   <li>    Javascript
+   </li>
+   <li>    Jquery
+   </li>
+   <li>    Vue
+   </li></ul>   
+</div>
+  </div>
+   <div class="col-md-4 bg-light skill-card">
+<div class="box-shadow-full text-center ">
+    <img src="/img/talent-management.svg" alt="">
+    <h5>Soft skills</h5>
+   <ul> <li>  Communication
+  </li>
+  <li>  Teamwork
+  </li>
+  <li>  Work Ethic
+  </li>
+  <li>  Empation 
+  </li></ul>
+</div>
+  </div>
+    
+</div>
+</div>
+
+              </div>
+              </div>
+          </section>
+
+ </main>
+ <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+
+<script>ScrollOut({
+  /* options */
+  cssProps: {
+    viewportY: true,
+      },
+});</script>
+<style>[data-scroll] {
+transition: all .5s linear;
+
+}
+
+
+[data-scroll="in"] {
+  display: inline-block;
+  transform: translateY(
+    calc( 3em * var(--viewport-y)));
+  
+}
+[data-scroll="out"] {
+  transform: translateY(-20px);
+
+
+  
+}
+</style>
 
 </body>
 <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
-<script src="/bootstrap/dist/js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+
 <script src="js/main.js"></script>
+
 </html>
