@@ -13,7 +13,7 @@
 <!-- CSS LIBRARIES -->
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/main.css">
 
 
 </head>
@@ -23,7 +23,7 @@
  <header>
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">LukeFolio</a>
+      <a class="navbar-brand js-scroll" href="#page-top">WebDev</a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
@@ -38,15 +38,15 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#about">About</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link js-scroll" href="#service">Services</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#work">Work</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link js-scroll" href="#blog">Blog</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#contact">Contact</a>
           </li>
@@ -55,6 +55,27 @@
     </div>
   </nav>
  </header>
+
+
+ <script>
+ $(window).trigger('scroll');
+    $(window).on('scroll', function () {
+      var pixels = 50; 
+      var top = 1200;
+      if ($(window).scrollTop() > pixels) {
+        $('.navbar-expand-md').addClass('navbar-reduce');
+        $('.navbar-expand-md').removeClass('navbar-trans');
+      } else {
+        $('.navbar-expand-md').addClass('navbar-trans');
+        $('.navbar-expand-md').removeClass('navbar-reduce');
+      }
+      if ($(window).scrollTop() > top) {
+        $('.scrolltop-mf').fadeIn(1000, "easeInOutExpo");
+      } else {
+        $('.scrolltop-mf').fadeOut(1000, "easeInOutExpo");
+      }
+    });
+    </script>
   <!--/ Nav End /-->
 
 
@@ -89,19 +110,18 @@
   <div class="container">
     <div class="row">
      
-      <div class="col-md-12">
         <div><!-- REMOVED  class="box-shadow-full"  -->
          
         	<div class="row">
-              <div class="col-md-12 mt-4">
+              <div class="col-lg-12 mt-4">
                 <h3 class="text-center text-primary py-1">
-About me                </h3>
-                <h3 class="text-center text-muted">
-What you need to know                </h3>
+
+Value content                </h3>
+                <h3 class="text-center text-muted">           </h3>
               </div>
             </div>
           <div class="row pt-3 mb-5 mx-3 px-1 pb-5">
-            <div class="col-3">
+            <div class="col-lg-3">
               <h5>Contact:</h5>
               <ul>
                 <li>E-mail:</li>
@@ -111,34 +131,41 @@ What you need to know                </h3>
                 
               </ul>
             </div>
-            <div class="col-3 m-auto text-center">
+            <div class="col-lg-2 m-auto text-center">
                 <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle" />            </div>
-            <div class="col mx-4">
-              <h5>Who am I, and how I see myself and arounding me world</h5> 
-I was born in Łódź, and currentry leave 50 km near the Łódź. I have master degree in Law from Breslau University, but
+            <div class="col-lg-5 mx-4">
+              <h5>It`s about time to, publish my personal webiste</h5> 
+              <p>Hello! I am Lukas Pawlaczyk Web Developer - Designer living near Łódź in Poland. <br>
+                Personal page has been created with Bootstrap 4, JS - jquery environnement.
+                Motion animation plugined using ScrollOut.js, typing header on landing view-page created with
+                support Typer.js. To create contact-form I used PHP, and formic library for stylish.
+                This website are inspired by: devfolio template, temgrand-bains.fr, 
+              </p>
+<!-- I was born in Łódź, and currentry leave 50 km near the Łódź. I have master degree in Law from Breslau University, but
 i m not practising. I presently working as an Graphic Designer, and Web Developer at MiD-media.
 During my free time, love cooking, talking, and traveling with my closest family and friends.
-I think it is important, to have "backgraound" support from closest people, when You want to improve yourself
+I think it is important, to have "backgraound" support from closest people, when You want to improve yourself -->
 </div>
           </div>
         </div>
-      </div>
+      
     </div>
   </div>
 
-        <div class="contain-fluid bg-light">
+        <div class="contain-fluid bg-light my-3 py-5">
           <div class="row">
 
-            <div class="col-md-12 mt-4">
-                <h2 class="text-center text-muted head-skill">Board skills</h2>
+            <div class="col-md-12">
+                <h2 class="text-center text-muted head-skill" data-scroll><span>Board</span> <br> <span>skills</span></h2>
             
-<div class="row">
+<div class="row transparent skill-car-container">
  
-  <div class="col-md-4 bg-light skill-card" data-scroll>
-    <div class="box-shadow-full text-center x">
-    <img src="/img/graphic-design.svg" alt="" >
+  <div class="col-lg-4 skill-card transparent my-5" data-scroll>
+    <div class="box-shadow-full text-center py-4">
+    <img src="/img/graphic-design.svg" alt="" class="pb-2">
     <h5>Design</h5>
-<ul>    <li>    Photoshop
+<ul class="px-1">  
+    <li>    Photoshop
 </li>
 <li>    Corel Draw
 </li>
@@ -148,28 +175,27 @@ I think it is important, to have "backgraound" support from closest people, when
 </li></ul>
 </div>
   </div>
-  <div class="col-md-4 bg-light skill-card">
-<div class="box-shadow-full text-center ">
-    <img src="/img/responsive.svg" alt="">
+  <div class="col-lg-4 skill-card transparent my-5" data-scroll>
+<div class="box-shadow-full text-center py-4">
+    <img src="/img/responsive.svg" alt="" class="pb-2">
 
     <h5>Web Development</h5>
-    <ul><li>    HTML5
+    <ul class="px-1"><li>    HTML5
    </li>
    <li>    CSS3
    </li>
    <li>    Javascript
    </li>
-   <li>    Jquery
+   <li>    PHP
    </li>
-   <li>    Vue
-   </li></ul>   
+  </ul>   
 </div>
   </div>
-   <div class="col-md-4 bg-light skill-card">
-<div class="box-shadow-full text-center ">
-    <img src="/img/talent-management.svg" alt="">
+   <div class="col-lg-4 skill-card transparent my-5" data-scroll>
+<div class="box-shadow-full text-center py-4 ">
+    <img src="/img/talent-management.svg" alt="" class="pb-2">
     <h5>Soft skills</h5>
-   <ul> <li>  Communication
+   <ul class="px-1"> <li>  Communication
   </li>
   <li>  Teamwork
   </li>
@@ -187,6 +213,27 @@ I think it is important, to have "backgraound" support from closest people, when
               </div>
           </section>
 
+
+
+          <section class="section__portfolio mx-4 my-4">
+           <div class="container my-5">
+              <div class="row section__portfolio__header px-5">
+              <h2 class="xl-font text-left">Luke</h2>
+
+          <span class="xl-font">folio</span>
+          <p class="s-font">my works</p>
+            </div>
+          </div>
+         <div class="grid grid-100 mx-auto mt-4">
+        <div class="grid__item"> <img src="/img/portfolio.jpg" alt=""></div> 
+        <div class="grid__item">> <img src="/img/portfolio.jpg" alt=""></div> 
+        <div class="grid__item">> <img src="/img/portfolio.jpg" alt=""></div> 
+
+         </div>
+
+
+          </section>
+
  </main>
  <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
 
@@ -196,25 +243,6 @@ I think it is important, to have "backgraound" support from closest people, when
     viewportY: true,
       },
 });</script>
-<style>[data-scroll] {
-transition: all .5s linear;
-
-}
-
-
-[data-scroll="in"] {
-  display: inline-block;
-  transform: translateY(
-    calc( 3em * var(--viewport-y)));
-  
-}
-[data-scroll="out"] {
-  transform: translateY(-20px);
-
-
-  
-}
-</style>
 
 </body>
 <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>

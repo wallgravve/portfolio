@@ -5,6 +5,7 @@
 :root {
     --primary:  #f03e40;
     --secondary: #9D3E40;
+    --dark: #343a40;
 }
 
 
@@ -28,6 +29,10 @@
   0% {background-color: #fff;}
   100% {background-color: var(--primary);
   }
+}
+
+.transparent {
+  background-color: transparent !;
 }
 /*======================================
 //--//-->   BOOTSTRAP QUASI-HOLY
@@ -448,16 +453,8 @@
 /* SKILLS SECTION */
 .skill-card {
   height: 300px;
+  list-style: none;
 
-  /* -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  opacity: 1;
-  outline: 0;
-  transform: translateY(0);
-  transition-delay: 0s,0s,0s;
-  transition-duration: .8s,.8s,.8s;
-  transition-property: opacity,transform,-webkit-transform;
-  transition-timing-function: cubic-bezier(.19,1,.22,1),cubic-bezier(.19,1,.22,1),cubic-bezier(.19,1,.22,1); */
 }
 img {
   width: 100px;
@@ -477,11 +474,32 @@ img {
 
   transform: matrix(1,0,0,1,0,-20);
 }
+/* ANIMATION SCROLLUP ON SKILLS SECTION CARDS */
 
-.fade-scroll-anim {
-  width: 50vw;
-  height: 50vh;
+[data-scroll] {
+  transition: transform .8s cubic-bezier(.19,1,.22,1),-webkit-transform .8s cubic-bezier(.19,1,.22,1);
+  }
+  
+  
+  
+  [data-scroll="in"] {
+    transform: translateY(
+      calc(50px * var(--viewport-y)));
+      -webkit-transform: translateY(
+      calc(50px * var(--viewport-y)));
+    
+  }
+  [data-scroll="out"] {
+    transform: translateY(
+      calc( -50px * var(--viewport-y)));
+      -webkit-transform: translateY(
+      calc(50px * var(--viewport-y)));
+    
+  
+  
+    
+  }
 
-  transition: background 4s;
-  border: 1px solid red;
-}
+
+
+  /* section service work */
