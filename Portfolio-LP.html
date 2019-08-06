@@ -11,9 +11,13 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
 
 <!-- CSS LIBRARIES -->
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
 
 
 </head>
@@ -56,26 +60,16 @@
   </nav>
  </header>
 
+<!-- <script>
+$(window).on("scroll", function() {
+    if($(window).scrollTop() > 800) {
+        $(".navbar").addClass("navbar-b");
+    } else {
+        //remove the background property so it comes transparent again (defined in your css)
+       $(".navbar").removeClass("active");
+    }
+});</script> -->
 
- <script>
- $(window).trigger('scroll');
-    $(window).on('scroll', function () {
-      var pixels = 50; 
-      var top = 1200;
-      if ($(window).scrollTop() > pixels) {
-        $('.navbar-expand-md').addClass('navbar-reduce');
-        $('.navbar-expand-md').removeClass('navbar-trans');
-      } else {
-        $('.navbar-expand-md').addClass('navbar-trans');
-        $('.navbar-expand-md').removeClass('navbar-reduce');
-      }
-      if ($(window).scrollTop() > top) {
-        $('.scrolltop-mf').fadeIn(1000, "easeInOutExpo");
-      } else {
-        $('.scrolltop-mf').fadeOut(1000, "easeInOutExpo");
-      }
-    });
-    </script>
   <!--/ Nav End /-->
 
 
@@ -162,7 +156,7 @@ I think it is important, to have "backgraound" support from closest people, when
  
   <div class="col-lg-4 skill-card transparent my-5" data-scroll>
     <div class="box-shadow-full text-center py-4">
-    <img src="/img/graphic-design.svg" alt="" class="pb-2">
+    <img src="img/graphic-design.svg" alt="" class="pb-2">
     <h5>Design</h5>
 <ul class="px-1">  
     <li>    Photoshop
@@ -177,7 +171,7 @@ I think it is important, to have "backgraound" support from closest people, when
   </div>
   <div class="col-lg-4 skill-card transparent my-5" data-scroll>
 <div class="box-shadow-full text-center py-4">
-    <img src="/img/responsive.svg" alt="" class="pb-2">
+    <img src="img/responsive.svg" alt="" class="pb-2">
 
     <h5>Web Development</h5>
     <ul class="px-1"><li>    HTML5
@@ -192,8 +186,8 @@ I think it is important, to have "backgraound" support from closest people, when
 </div>
   </div>
    <div class="col-lg-4 skill-card transparent my-5" data-scroll>
-<div class="box-shadow-full text-center py-4 ">
-    <img src="/img/talent-management.svg" alt="" class="pb-2">
+<div class="box-shadow-full text-center py-4">
+    <img src="img/talent-management.svg" alt="" class="pb-2">
     <h5>Soft skills</h5>
    <ul class="px-1"> <li>  Communication
   </li>
@@ -211,11 +205,48 @@ I think it is important, to have "backgraound" support from closest people, when
 
               </div>
               </div>
+
+
+
+              <section class="container my-5 py-5 blog">
+                  <h2 class="text-center text-muted head-skill" data-scroll><span>blog</span></h2>
+
+
+                <div class="container">
+                  <div class="grid_70 post">
+                    <!-- <div class="post__heading">
+                      
+                          <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle" />   
+                          <div class="post__heading__title">
+                          <h5>When the box said <em>"It's no good. I've run out of pink."</em></h5>
+                        </div>
+                        <div class="post__heading__title__meta">August 99, 2019 at 2:21pm</div>
+                        
+                         
+                        
+                        </div>
+                       
+                      <img src="img/portfolio.jpg" alt="">
+                      <div class="post__content"> <p>Sometimes i share same problem with <em>"small, green and hideaosly warty humanoid"</em>  <a href=""><em></em></a></p>
+                        It is no remedieum for lack of ideas, or miss enytching else. I d like to think. probably i involve missing ideas to my own personal way.
+                        But deffinitly, we can find ideas in "world discue" - Therry Pratchet</div> -->
+                        <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle" />   
+                        <div class="post__heading__title">
+                            <h5>When the box said <em>"It's no good. I've run out of pink."</em></h5>
+                          </div>
+                          <div class="post__heading__title__meta">August 99, 2019 at 2:21pm</div>
+                          <img src="img/portfolio.jpg" alt="">
+                          <div class="post__content"> <p>Sometimes i share same problem with <em>"small, green and hideaosly warty humanoid"</em>  <a href=""><em></em></a></p>
+                            It is no remedieum for lack of ideas, or miss enytching else. I d like to think. probably i involve missing ideas to my own personal way.
+                            But deffinitly, we can find ideas in "world discue" - Therry Pratchet</div>
+                  </div>
+                </div>
+              </section>
           </section>
 
 
 
-          <section class="section__portfolio mx-4 my-4">
+          <section class="section__portfolio mx-4 my-4 bg-light">
            <div class="container my-5">
               <div class="row section__portfolio__header px-5">
               <h2 class="xl-font text-left">Luke</h2>
@@ -224,17 +255,122 @@ I think it is important, to have "backgraound" support from closest people, when
           <p class="s-font">my works</p>
             </div>
           </div>
-         <div class="grid grid-100 mx-auto mt-4">
-        <div class="grid__item"> <img src="/img/portfolio.jpg" alt=""></div> 
-        <div class="grid__item">> <img src="/img/portfolio.jpg" alt=""></div> 
-        <div class="grid__item">> <img src="/img/portfolio.jpg" alt=""></div> 
+
+  
+    <div class="carousel carousel-body mx-auto mt-4 variable-width">
+
+        <div class="carousel__item"> <img src="img/portfolio.jpg" alt=""></div> 
+        <div class="carousel__item"> <img src="img/portfolio.jpg" alt=""></div> 
+        <div class="carousel__item"> <img src="img/portfolio.jpg" alt=""></div> 
 
          </div>
 
+  <script>
+           $(document).ready(function(){
+$(document).ready(function() {
+  $('.variable-width').slick({
+    variableWidth: true,
+    slidesToShow: 3,
+    infinite: true,
+    speed: 500,
+    centerMode: true,
+  });
+});
+
+
+          });
+          </script> 
+            
+            
 
           </section>
 
  </main>
+
+<footer>
+    <div class="f_title row ml-4 my-5 py-3">
+        <h4 class="pl-4 py-4">Touch me</h4>
+          </div>
+  <div class="container my-2">
+
+     
+
+
+
+
+            <div class="row footer__main">
+            <div class="footer__main__content grid_40 py-4 px-4">
+                <div class="footer__main__content__icon">
+                  <img src="" alt="">
+                  </div>
+                    <div class="footer__main__content__text">
+                      <p>Please describe your question
+                        Send me a message and i will
+                        answer you as soon as possible!
+                      </p>
+                    </div>
+                    <div class="footer__main__content__social">
+                      <img src="" alt="">
+                      <img src="" alt="">
+                      <img src="" alt="">
+                      <img src="" alt="">
+                    </div>
+                    <div class="footer__main__content__address">
+                      Designer <br>
+                      Poland, Wrocław <br>
+                      ul. Tęczowa 12/3 50-000 <br>
+                      +48 123-456-789 <br>
+                      night-coding@dev.com <br>
+                    </div>
+               
+
+            </div>
+            <div class="footer__main__form grid_60 py-4 px-4">
+                <div class="footer__main__form__title">
+                  <h4>Let`s start!</h4></div>
+                  <div class="contact">
+                
+            
+                      <form action="contact.php" method="post">
+                          <div class="form-group">
+                              <label for="name">Name</label>
+                              <input type="text" name="name" autocomplete="off" class="form-control" placeholder="Enter Name">
+                          </div>
+                          <div class="form-group">
+                              <label for="email">Your Email address</label>
+                                  <input type="email" name="email" autocomplete="off" class="form-control" placeholder="Enter Email">
+                          </div>
+                          <div class="form-group">
+                              <label for="topic">Topic *</label>
+                                  <input type="text" name="topic" autocomplete="on" class="form-control" placeholder="Enter Topic">
+                          </div>
+                          <div class="form-group">
+                              <label for="message">Your Message </label>
+                                  <textarea class="form-control" rows="8" id="comment" name="message"></textarea>
+                              <br>
+      
+                              <input type="submit" value="Send" class="form-control" class="btn btn-primary">
+                          </div>
+                          <p class="muted">* means no required field</p>
+                      </form>
+                  </div>
+
+                  
+            </div>
+            </div>
+   
+    </div>
+
+
+  
+
+</footer>
+
+
+
+
+
+
  <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
 
 <script>ScrollOut({
@@ -244,11 +380,16 @@ I think it is important, to have "backgraound" support from closest people, when
       },
 });</script>
 
+
+
+
 </body>
-<script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+<!-- <script src="node_modules/jquery/dist/jquery.slim.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script src="js/main.js"></script>
 

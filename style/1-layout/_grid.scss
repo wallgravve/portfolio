@@ -1,0 +1,24 @@
+body {
+    background: $black;
+}
+.container-fluid {
+    height: 820px;
+    border-bottom: solid 1px red;
+
+}
+.holder__content {
+    transform: translate(250px, 250px);
+}
+.bg__text {
+    color: $grey;
+    font-size: 120px;
+    transform: translate(100px, 330px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    width: 1180px;
+    ::after {
+        width: 20px;
+        
+    }
+  
+}
