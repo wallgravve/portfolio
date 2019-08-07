@@ -1,0 +1,17 @@
+{
+  "name": "lp",
+  "version": "1.0.0",
+  "description": "my visit card page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LP",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "file:bootstrap",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "typer-js": "^5.0.1"
+  }
+}
