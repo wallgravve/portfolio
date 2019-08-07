@@ -40,36 +40,33 @@ $(document).ready(function(){
 
 });
 
+$(document).ready(function() {
+  $('.carousel').slick({
+    variableWidth: true,
+    slidesToShow: 1,
 
-// $(document).ready(function(){
+    loop: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 1008,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+    
+      
+    ]
 
-// $(window).scroll(function(){
-//   $('nav').ToogleClass('scrolled', $(this).scrollTop() > 800);
-// });
-// });
-
-
-
-// function inViewport( element ) {
-//   // Get the elements position relative to a viewport
-//   var bb = element.getBoundingClientRect();
-
-//   //Check if the element is oputside the viewport
-//   //Then invert the return value because you want to know the opposite
-
-//   return(bb.top > innerHeight || bb.bottom < 0);
-
-// }
-// var myElement = document.querySelektor('fade-scroll-anim');
-
-// //listen for the scroll event
-
-// document.addEventListener('scroll', event => {
-//   //  check the viewport statyus
-//     if (inViewport ( myElement)) {
-//       myElement.style.transform= 'translate(0, -1300px)';
-//     }
-//     else {
-//       style.transform = ''; }
-
-// })
+  });
+});

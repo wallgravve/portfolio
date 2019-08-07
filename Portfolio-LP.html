@@ -16,18 +16,21 @@
     <link rel="stylesheet" href="css/main.css">
 
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
 
 
 
 </head>
 <body id="page-top" class="bg-white">
     
-  <!--/ Nav Star /-->
+ 
  <header>
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">WebDev</a>
+      <a class="navbar-brand js-scroll" href="#page-top">Luke<span>Folio</span></a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
@@ -42,15 +45,14 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#about">About</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link js-scroll" href="#service">Services</a>
-          </li> -->
+     
+          <li class="nav-item">
+              <a class="nav-link js-scroll" href="#blog">Blog</a>
+            </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#work">Work</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link js-scroll" href="#blog">Blog</a>
-          </li> -->
+      
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#contact">Contact</a>
           </li>
@@ -60,15 +62,6 @@
   </nav>
  </header>
 
-<!-- <script>
-$(window).on("scroll", function() {
-    if($(window).scrollTop() > 800) {
-        $(".navbar").addClass("navbar-b");
-    } else {
-        //remove the background property so it comes transparent again (defined in your css)
-       $(".navbar").removeClass("active");
-    }
-});</script> -->
 
   <!--/ Nav End /-->
 
@@ -129,16 +122,15 @@ Value content                </h3>
                 <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle" />            </div>
             <div class="col-lg-5 mx-4">
               <h5>It`s about time to, publish my personal webiste</h5> 
-              <p>Hello! I am Lukas Pawlaczyk Web Developer - Designer living near Łódź in Poland. <br>
-                Personal page has been created with Bootstrap 4, JS - jquery environnement.
-                Motion animation plugined using ScrollOut.js, typing header on landing view-page created with
-                support Typer.js. To create contact-form I used PHP, and formic library for stylish.
-                This website are inspired by: devfolio template, temgrand-bains.fr, 
+              <p>Hello! I am Luke. I essentially create websites as well as eat, drink, sleep, design, print, and take up challenges in a printing house that I work in.
+
+                About the SiteFolio
+The personal page was created with Bootstrap 4, JS - jQuery environnement.
+The motion animation plugined by the usage of ScrollOut.js, typing header on landing view-page created with the support of Typer.js. To create the contact-form, I used PHP. Finally, Bootstrap  and devfolio template were used to give the website its final look and style.
+I took inspiratkon from the grand-bains.fr website.
+
               </p>
-<!-- I was born in Łódź, and currentry leave 50 km near the Łódź. I have master degree in Law from Breslau University, but
-i m not practising. I presently working as an Graphic Designer, and Web Developer at MiD-media.
-During my free time, love cooking, talking, and traveling with my closest family and friends.
-I think it is important, to have "backgraound" support from closest people, when You want to improve yourself -->
+
 </div>
           </div>
         </div>
@@ -146,15 +138,15 @@ I think it is important, to have "backgraound" support from closest people, when
     </div>
   </div>
 
-        <div class="contain-fluid bg-light my-3 py-5">
+        <div class="contain-fluid bg-light my-3 py-5 skill-section">
           <div class="row">
 
             <div class="col-md-12">
                 <h2 class="text-center text-muted head-skill" data-scroll><span>Board</span> <br> <span>skills</span></h2>
             
-<div class="row transparent skill-car-container">
+<div class="row transparent skill-card-container">
  
-  <div class="col-lg-4 skill-card transparent my-5" data-scroll>
+  <div class=" col-4 skill-card transparent" data-scroll>
     <div class="box-shadow-full text-center py-4">
     <img src="img/graphic-design.svg" alt="" class="pb-2">
     <h5>Design</h5>
@@ -169,7 +161,7 @@ I think it is important, to have "backgraound" support from closest people, when
 </li></ul>
 </div>
   </div>
-  <div class="col-lg-4 skill-card transparent my-5" data-scroll>
+  <div class=" col-4 skill-card transparent" data-scroll>
 <div class="box-shadow-full text-center py-4">
     <img src="img/responsive.svg" alt="" class="pb-2">
 
@@ -185,7 +177,7 @@ I think it is important, to have "backgraound" support from closest people, when
   </ul>   
 </div>
   </div>
-   <div class="col-lg-4 skill-card transparent my-5" data-scroll>
+   <div class=" col-4 skill-card transparent" data-scroll>
 <div class="box-shadow-full text-center py-4">
     <img src="img/talent-management.svg" alt="" class="pb-2">
     <h5>Soft skills</h5>
@@ -205,31 +197,15 @@ I think it is important, to have "backgraound" support from closest people, when
 
               </div>
               </div>
+            </section>
 
-
-
-              <section class="container my-5 py-5 blog">
+              <section class="container my-5 py-5 blog" id="blog">
                   <h2 class="text-center text-muted head-skill" data-scroll><span>blog</span></h2>
 
 
                 <div class="container">
                   <div class="grid_70 post">
-                    <!-- <div class="post__heading">
-                      
-                          <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle" />   
-                          <div class="post__heading__title">
-                          <h5>When the box said <em>"It's no good. I've run out of pink."</em></h5>
-                        </div>
-                        <div class="post__heading__title__meta">August 99, 2019 at 2:21pm</div>
-                        
-                         
-                        
-                        </div>
-                       
-                      <img src="img/portfolio.jpg" alt="">
-                      <div class="post__content"> <p>Sometimes i share same problem with <em>"small, green and hideaosly warty humanoid"</em>  <a href=""><em></em></a></p>
-                        It is no remedieum for lack of ideas, or miss enytching else. I d like to think. probably i involve missing ideas to my own personal way.
-                        But deffinitly, we can find ideas in "world discue" - Therry Pratchet</div> -->
+     
                         <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle" />   
                         <div class="post__heading__title">
                             <h5>When the box said <em>"It's no good. I've run out of pink."</em></h5>
@@ -242,43 +218,39 @@ I think it is important, to have "backgraound" support from closest people, when
                   </div>
                 </div>
               </section>
-          </section>
+         
 
 
 
-          <section class="section__portfolio mx-4 my-4 bg-light">
-           <div class="container my-5">
-              <div class="row section__portfolio__header px-5">
-              <h2 class="xl-font text-left">Luke</h2>
+          <section class=" my-4 bg-light" id="work">
+            <div class="section__portfolio">
+     <div class="row">
+        <div class="container">
+            <div class="row section__portfolio__header px-5">
+            <h2 class="xl-font text-left">Luke</h2>
 
-          <span class="xl-font">folio</span>
-          <p class="s-font">my works</p>
-            </div>
+        <span class="xl-font">folio</span>
+        <p class="s-font">my works</p>
           </div>
+        
 
-  
-    <div class="carousel carousel-body mx-auto mt-4 variable-width">
+     </div>
+    </div>
+    <div class="carousel carousel-body mx-auto mt-4">
 
         <div class="carousel__item"> <img src="img/portfolio.jpg" alt=""></div> 
         <div class="carousel__item"> <img src="img/portfolio.jpg" alt=""></div> 
         <div class="carousel__item"> <img src="img/portfolio.jpg" alt=""></div> 
 
          </div>
-
+        </div>
+      
   <script>
-           $(document).ready(function(){
-$(document).ready(function() {
-  $('.variable-width').slick({
-    variableWidth: true,
-    slidesToShow: 3,
-    infinite: true,
-    speed: 500,
-    centerMode: true,
-  });
-});
+       
 
 
-          });
+
+    
           </script> 
             
             
@@ -287,21 +259,26 @@ $(document).ready(function() {
 
  </main>
 
-<footer>
+<footer id="contact">
     <div class="f_title row ml-4 my-5 py-3">
-        <h4 class="pl-4 py-4">Touch me</h4>
+        <h4 class="pl-4 py-4">keep in touch</h4>
           </div>
-  <div class="container my-2">
+  
 
      
 
 
 
 
-            <div class="row footer__main">
-            <div class="footer__main__content grid_40 py-4 px-4">
+            <div class="footer__main">
+             
+            <div class="footer__main__content grid_40 py-4 px-4 mx-5">
                 <div class="footer__main__content__icon">
-                  <img src="" alt="">
+                    <svg width="52" height="42" viewBox="0 0 52 42" fill="#343a40" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M51.8109 23.1339L44.0505 2.15748C43.7687 1.39527 43.2068 0.788582 42.4683 0.449113C41.73 0.109644 40.9038 0.0777685 40.1416 0.359862L2.30105 14.3591C1.53884 14.6411 0.932153 15.203 0.592552 15.9412C0.253083 16.6795 0.221341 17.5058 0.503302 18.2679L8.26367 39.2443C8.5455 40.0065 9.10743 40.6132 9.84587 40.9528C10.2509 41.1391 10.6824 41.2326 11.1154 41.2326C11.4716 41.2326 11.8286 41.1694 12.1727 41.0421L50.0134 27.0428H50.0135C51.5864 26.4607 52.3929 24.7072 51.8109 23.1339ZM38.0616 4.37319L26.324 21.1533L6.49155 16.0526L38.0616 4.37319ZM10.5684 36.7067L3.83703 18.5113L19.4268 22.5212L10.5684 36.7067ZM13.8646 37.1723L22.5176 23.316L26.5873 24.3628C26.7136 24.3948 26.8413 24.4115 26.9661 24.4115C27.4559 24.4115 27.9244 24.1742 28.2134 23.762L30.6217 20.3163L46.2098 25.2062L13.8646 37.1723ZM32.4519 17.7021L41.6774 4.51065L48.4114 22.7085L32.4519 17.7021Z" fill="white"/>
+                      </svg>
+                      
+                
                   </div>
                     <div class="footer__main__content__text">
                       <p>Please describe your question
@@ -310,10 +287,27 @@ $(document).ready(function() {
                       </p>
                     </div>
                     <div class="footer__main__content__social">
-                      <img src="" alt="">
-                      <img src="" alt="">
-                      <img src="" alt="">
-                      <img src="" alt="">
+<a href="">
+    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12.5" cy="12.5" r="12.5" fill="white"/>
+      <path fill="#343a40" d="M18.8086 9.78197C18.8184 9.91868 18.8184 10.0554 18.8184 10.1921C18.8184 14.362 15.6446 19.1667 9.84375 19.1667C8.05664 19.1667 6.39649 18.6491 5 17.7507C5.25392 17.78 5.49803 17.7898 5.76172 17.7898C7.2363 17.7898 8.59375 17.2918 9.67773 16.4422C8.29101 16.4128 7.1289 15.5046 6.7285 14.2546C6.92383 14.2839 7.11913 14.3035 7.32423 14.3035C7.60742 14.3035 7.89065 14.2644 8.1543 14.1961C6.70899 13.9031 5.62497 12.6335 5.62497 11.1003V11.0613C6.04488 11.2957 6.5332 11.4421 7.05074 11.4617C6.20113 10.8952 5.64451 9.92845 5.64451 8.83469C5.64451 8.24877 5.80073 7.71166 6.07419 7.24291C7.62693 9.15697 9.96093 10.4069 12.5781 10.5437C12.5293 10.3093 12.5 10.0652 12.5 9.82105C12.5 8.08275 13.9062 6.66675 15.6543 6.66675C16.5625 6.66675 17.3828 7.04761 17.959 7.66284C18.6718 7.52613 19.3554 7.26244 19.9609 6.90112C19.7265 7.63356 19.2285 8.2488 18.5742 8.6394C19.209 8.57107 19.8242 8.39525 20.3906 8.15113C19.961 8.77611 19.4238 9.33273 18.8086 9.78197Z" fill="#FF9A3D"/>
+      </svg></a>
+                          
+                       <a href="">   <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12.5" cy="12.5" r="12.5" fill="white"/>
+                        <path fill="#343a40" d="M9.46455 17.4972H6.87305V9.15365H9.46455V17.4972ZM8.16741 8.01551C7.33891 8.01551 6.66663 7.32928 6.66663 6.50078C6.66663 5.67228 7.33891 5 8.16741 5C8.99591 5 9.66819 5.67228 9.66819 6.50078C9.66819 7.32928 8.99591 8.01551 8.16741 8.01551ZM19.1638 17.4972H16.5779V13.4356C16.5779 12.4676 16.5584 11.2263 15.2306 11.2263C13.8832 11.2263 13.6768 12.278 13.6768 13.3659V17.4972H11.0881V9.15365H13.5736V10.2918H13.6098C13.9557 9.63624 14.801 8.94443 16.0618 8.94443C18.684 8.94443 19.1666 10.6712 19.1666 12.914V17.4972H19.1638Z" fill="#FF9A3D"/>
+                        </svg></a>
+                            
+                            
+  <a href=""><svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8.57617 20.13C8.57617 20.2334 8.45727 20.3161 8.30736 20.3161C8.13677 20.3316 8.01787 20.2489 8.01787 20.13C8.01787 20.0266 8.13677 19.9439 8.28668 19.9439C8.44176 19.9284 8.57617 20.0111 8.57617 20.13ZM6.96846 19.8973C6.93228 20.0007 7.03567 20.1196 7.19075 20.1506C7.32516 20.2023 7.48024 20.1506 7.51126 20.0473C7.54227 19.9439 7.44405 19.825 7.28897 19.7784C7.15456 19.7423 7.00465 19.7939 6.96846 19.8973ZM9.25337 19.8095C9.10346 19.8456 9.00007 19.9439 9.01558 20.0628C9.03109 20.1662 9.16549 20.2334 9.32058 20.1972C9.47049 20.161 9.57388 20.0628 9.55837 19.9594C9.54286 19.8612 9.40329 19.7939 9.25337 19.8095ZM12.6549 0C5.48482 0 0 5.44346 0 12.6135C0 18.3465 3.6083 23.2523 8.76227 24.9789C9.42397 25.0978 9.65659 24.6894 9.65659 24.3534C9.65659 24.0329 9.64108 22.265 9.64108 21.1794C9.64108 21.1794 6.02245 21.9548 5.26253 19.6389C5.26253 19.6389 4.67321 18.1345 3.82542 17.7468C3.82542 17.7468 2.64161 16.9352 3.90813 16.9507C3.90813 16.9507 5.19533 17.0541 5.90355 18.2845C7.03567 20.2799 8.93287 19.7061 9.6721 19.3649C9.791 18.5378 10.127 17.964 10.4992 17.6228C7.60948 17.3023 4.69389 16.8835 4.69389 11.9105C4.69389 10.4889 5.08677 9.77549 5.91389 8.86566C5.77948 8.52965 5.34008 7.14422 6.04829 5.35558C7.12872 5.01957 9.61524 6.75134 9.61524 6.75134C10.6491 6.46185 11.7606 6.31194 12.8617 6.31194C13.9628 6.31194 15.0742 6.46185 16.1081 6.75134C16.1081 6.75134 18.5946 5.0144 19.6751 5.35558C20.3833 7.14939 19.9439 8.52965 19.8095 8.86566C20.6366 9.78066 21.1432 10.494 21.1432 11.9105C21.1432 16.899 18.0984 17.2971 15.2086 17.6228C15.6842 18.0312 16.0874 18.8066 16.0874 20.0214C16.0874 21.7635 16.0719 23.9192 16.0719 24.3431C16.0719 24.6791 16.3097 25.0875 16.9662 24.9686C22.1357 23.2523 25.6406 18.3465 25.6406 12.6135C25.6406 5.44346 19.825 0 12.6549 0ZM5.02474 17.8295C4.95753 17.8812 4.97304 18.0001 5.06092 18.0984C5.14364 18.1811 5.26253 18.2173 5.32974 18.1501C5.39694 18.0984 5.38143 17.9795 5.29355 17.8812C5.21084 17.7985 5.09194 17.7623 5.02474 17.8295ZM4.46643 17.4108C4.43025 17.478 4.48194 17.5607 4.58533 17.6124C4.66804 17.6641 4.77143 17.6486 4.80762 17.5762C4.84381 17.509 4.79211 17.4263 4.68872 17.3746C4.58533 17.3436 4.50262 17.3591 4.46643 17.4108ZM6.14135 19.2512C6.05863 19.3184 6.08965 19.4734 6.20855 19.5717C6.32745 19.6906 6.47736 19.7061 6.54456 19.6234C6.61177 19.5562 6.58075 19.4011 6.47736 19.3028C6.36363 19.1839 6.20855 19.1684 6.14135 19.2512ZM5.55202 18.4912C5.46931 18.5429 5.46931 18.6773 5.55202 18.7962C5.63474 18.9151 5.77431 18.9668 5.84152 18.9151C5.92423 18.8479 5.92423 18.7135 5.84152 18.5946C5.76914 18.4757 5.63474 18.424 5.55202 18.4912Z" fill="white"/>
+    </svg></a>
+    
+   <a href=""> <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12.5" cy="12.5" r="12.5" fill="white"/>
+    <path fill="#343a40" d="M10.8301 20.8334V13.379H8.33337V10.4167H10.8301V8.08276C10.8301 5.54696 12.3796 4.16675 14.642 4.16675C15.726 4.16675 16.6569 4.24813 16.9271 4.28394V6.93368H15.3581C14.1276 6.93368 13.89 7.51961 13.89 8.37573V10.4167H16.6667L16.2858 13.379H13.89V20.8334" fill="#FF9A3D"/>
+    </svg></a>
+      
                     </div>
                     <div class="footer__main__content__address">
                       Designer <br>
@@ -357,9 +351,10 @@ $(document).ready(function() {
 
                   
             </div>
+        
             </div>
    
-    </div>
+
 
 
   
@@ -380,17 +375,19 @@ $(document).ready(function() {
       },
 });</script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" type="text/javascript"></script>
+
+<script src="js/main.js"></script>
 
 
 </body>
 <!-- <script src="node_modules/jquery/dist/jquery.slim.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-<script src="js/main.js"></script>
 
 </html>

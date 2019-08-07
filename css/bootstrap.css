@@ -133,6 +133,7 @@ ul,
 dl {
   margin-top: 0;
   margin-bottom: 1rem;
+  list-style: none;
 }
 
 ol ol,
@@ -181,13 +182,18 @@ sup {
 }
 
 a {
-  color: #007bff;
-  text-decoration: none;
   background-color: transparent;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  font-weight: 600;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 a:hover {
-  color: #0056b3;
+  color: var(--secondary);
   text-decoration: underline;
 }
 

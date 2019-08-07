@@ -7,10 +7,35 @@
     src: url("./fonts/Rational-Semibold.otf") format("otf");
   }
 
-  
+  html, body { overflow-x: hidden; }
 
-  $breakpoints: (
-    "phone":        400px,
+//   $breakpoints: (
+//     "phone":        400px,
+//     "phone-wide":   480px,
+//     "phablet":      560px,
+//     "tablet-small": 640px,
+//     "tablet":       868px,
+//     "tablet-wide":  1024px,
+//     "desktop":      1248px,
+//     "desktop-wide": 1380px
+// );
+// @mixin mq($width, $type: min) {
+//     @if map_has_key($breakpoints, $width) {
+//         $width: map_get($breakpoints, $width);
+//         @if $type == max {
+//             $width: $width - 1px;
+//         }
+//         @media only screen and (#{$type}-width: $width) {
+//             @content;
+//         }
+//     }
+// }
+
+
+
+$breakpoints: (
+
+    "phone":        320px,
     "phone-wide":   480px,
     "phablet":      560px,
     "tablet-small": 640px,
@@ -19,17 +44,105 @@
     "desktop":      1248px,
     "desktop-wide": 1380px
 );
-@mixin mq($width, $type: min) {
-    @if map_has_key($breakpoints, $width) {
-        $width: map_get($breakpoints, $width);
-        @if $type == max {
-            $width: $width - 1px;
-        }
-        @media only screen and (#{$type}-width: $width) {
-            @content;
-        }
+
+@mixin respond-below($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
     }
+
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
 }
+
+// Respond above.
+@mixin respond-above($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+
+
+@mixin respond-between($lower, $upper) {
+
+  // If both the lower and upper breakpoints exist in the map.
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+
+    // Get the lower and upper breakpoints.
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+
+    // Write the media query.
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  
+  // If one or both of the breakpoints don't exist.
+  } @else {
+
+    // If lower breakpoint is invalid.
+    @if (map-has-key($breakpoints, $lower) == false) {
+
+      // Log a warning.
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // If upper breakpoint is invalid.
+    @if (map-has-key($breakpoints, $upper) == false) {
+
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+
+
+// @include respond-between(sm, md) {
+//   .element {
+//     font-weight: bold;
+//   }
+// }
+
+
+// @include respond-above(sm) {
+//   .element {
+//     font-weight: bold;
+//   }
+// }
+
+// @include respond-below(sm) {
+//   .element {
+//     font-weight: bold;
+//   }
+// }
 
   
   .xl-font {
@@ -186,6 +299,8 @@
       bottom: 50px;
       cursor: pointer;
       border-radius: 50%;
+
+      
     }
   }
   
@@ -197,6 +312,7 @@
       position: relative;
       padding-right: 10px;
       padding-left: 0;
+
     }
     &.navbar-trans .nav-link, &.navbar-reduce .nav-link {
       color: #fff;
@@ -262,6 +378,7 @@
       background-color: #fff;
       padding-top: 15px;
       padding-bottom: 15px;
+      
       .nav-link {
         color: var(--primary);
         &:before {
@@ -272,24 +389,32 @@
         }
       }
       .show > .nav-link, .active > .nav-link {
-        color: var(--primary);
+        a {
+          color: white;
+          text-decoration: none;
+          background-color: transparent;
+          font-weight: 900;
+        }
       }
+    
       .nav-link {
         &.show, &.active {
           color: var(--primary);
         }
       }
       .navbar-brand {
-        color: var(--primary) f;
+        color: var(--primary);
+       
       }
       .navbar-toggler span {
         background-color: var(--primary);
       }
     }
     .navbar-brand {
-      color: #fff;
+      color: var(--dark);
       font-size: 1.6rem;
       font-weight: 600;
+
     }
     .navbar-nav .dropdown-item.show .dropdown-menu, .dropdown.show .dropdown-menu, .dropdown-btn.show .dropdown-menu {
       -webkit-transform: translate3d(0px, 0px, 0px);
@@ -401,24 +526,24 @@
       padding-top: 15px;
       padding-bottom: 15px;
       .nav-link {
-        color: #0078ff;
+        color: var(--primary);
         &:before {
-          background-color: #0078ff;
+          color: var(--primary);
         }
         &:hover {
-          color: #0078ff;
+             color: var(--primary);
         }
       }
       .show > .nav-link, .active > .nav-link {
-        color: #0078ff;
+        color: var(--primary);
       }
       .nav-link {
         &.show, &.active {
-          color: #0078ff;
+          color: var(--primary);
         }
       }
       .navbar-brand {
-        color: #0078ff;
+        color: var(--primary);
       }
       .navbar-toggler span {
         background-color: #1B1B1B;
@@ -632,17 +757,34 @@
 
     
   }
-  .skill-car-container {
+  .skill-card-container {
     height: 100%;
     max-width: 1200px;
     margin: auto;
+    transform: translateY(-80px);
+    @include respond-below('tablet') {
+      display: flex;
+      flex-direction: column;
+     align-content: center;
+    
+    }
+
   }
   
   /* SKILLS SECTION */
+
+
+  .skill-section {
+    height: 1300px;
+    @include respond-above('tablet') { 
+    height: 600px;
+    }
+  }
   
   .skill-card {
     height: 300px;
     max-width: 380px;
+    
    
     li {
         list-style: none;
@@ -698,51 +840,67 @@
 
 
   .skill-card[data-scroll] {
-    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    @include respond-above('tablet') {
+      transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+
+    }
+
   }
   
   .skill-card[data-scroll="in"] {
-    transform: translateY(calc(50px * var(--viewport-y)));
-    -webkit-transform: translateY(calc(50px * var(--viewport-y)));
+    @include respond-above('tablet') {
+      transform: translateY(calc(50px * var(--viewport-y)));
+      -webkit-transform: translateY(calc(50px * var(--viewport-y)));
+    }
+  
   }
   
   .skill-card[data-scroll="out"] {
+  @include respond-above('tablet') {
     transform: translateY(calc( -50px * var(--viewport-y)));
     -webkit-transform: translateY(calc(50px * var(--viewport-y)));
   }
+}
 
 
   .skill-card:nth-of-type(2)[data-scroll] {
+    @include respond-above('tablet') {
     transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), 
     -webkit-transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   }
-  
+}
   .skill-card:nth-of-type(2)[data-scroll="in"] {
+    @include respond-above('tablet') {
     transform: translateY(calc(150px * var(--viewport-y)));
     -webkit-transform: translateY(calc(150px * var(--viewport-y)));
   }
-  
+}
   .skill-card:nth-of-type(2)[data-scroll="out"] {
+    @include respond-above('tablet') {
     transform: translateY(calc( -150px * var(--viewport-y)));
     -webkit-transform: translateY(calc(150px * var(--viewport-y)));
   }
+}
 
 
   .skill-card:nth-of-type(3)[data-scroll] {
+    @include respond-above('tablet') {
     transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), 
     -webkit-transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   }
-  
+}
   .skill-card:nth-of-type(3)[data-scroll="in"] {
+    @include respond-above('tablet') {
     transform: translateY(calc(250px * var(--viewport-y)));
     -webkit-transform: translateY(calc(250px * var(--viewport-y)));
   }
-  
+}
   .skill-card:nth-of-type(3)[data-scroll="out"] {
+    @include respond-above('tablet') {
     transform: translateY(calc( -250px * var(--viewport-y)));
     -webkit-transform: translateY(calc(250px * var(--viewport-y)));
   }
-
+}
 /*   section blog   */
 
 .blog {
@@ -756,9 +914,8 @@
     opacity: .1;
     outline: 0;
     text-transform: uppercase;
-    color: red;
   
-    transform:  translate(280px,120px);
+  
   }
 }
 
@@ -766,6 +923,11 @@
   width: 70%;
   height: auto;
   display: grid;
+  @include respond-below('tablet-small') {
+    width: 100%;
+    display: flex;
+
+  }
 }
 .post { 
   display: grid; 
@@ -773,10 +935,27 @@
   grid-template-rows: 0.6fr 0.3fr 0.6fr 1.2fr 1.2fr 2fr; 
   grid-column-gap: 0px;
   grid-row-gap: 0px; 
-  img { grid-area: 1 / 1 / 4 / 2; } 
-  .post__heading__title { grid-area: 1 / 3 / 3 / 5; } 
-  .post__heading__title__meta { grid-area: 3 / 3 / 4 / 5; } 
-  img:nth-of-type(2) { grid-area: 4 / 2 / 6 / 6; } 
+  @include respond-below('tablet-small') {
+    display: flex;
+    flex-direction: column;
+
+
+  }
+  img { grid-area: 1 / 1 / 4 / 2; 
+    @include respond-below('tablet-small') {
+    
+  
+    }
+  } 
+  .post__heading__title { grid-area: 1 / 2 / 3 / 5; } 
+  .post__heading__title__meta { grid-area: 3 / 2 / 4 / 5; } 
+  img:nth-of-type(2) { grid-area: 4 / 2 / 6 / 6; 
+    @include respond-below('tablet-small') {
+    
+  
+    }
+
+  } 
   .post__content { grid-area: 6 / 2 / 7 / 6; } 
   }
 
@@ -785,27 +964,49 @@
 
 
 
+  .head-blog {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    font-size: 8rem;
+    font-weight: 800;
+    line-height: .84375;
+    margin: 0;
+    opacity: .1;
+    outline: 0;
+    text-transform: uppercase;
+    transform: matrix(1, 0, 0, 1, 0, -20) translateX(440px);
+right:0;
+width: 300px;
 
-
-
- 
+  }
 
   
   /* section service work */
   .section__portfolio {
-    font-size: 60px !important;
 
-    margin-bottom: 20px;
+  top: 40px;
+    left: 30%;
+    position: relative;
+    @include respond-below('tablet') {
+      left: 5%;
+     }
+
+
+  
  &__header {
- 
+  z-index: 22;
+  position: relative;
+
+
  }
 .row {
-  transform: translateY(100px);
+
     font-size: 60px !important;
+   
 
     display: flex;
     flex-direction: column;
-    z-index: 20;
+ 
     
 
  
@@ -832,6 +1033,10 @@ font-weight: 700;
 
 
 .carousel {
+  top: -120px;
+  left: 20%;
+  z-index: 18;
+  position: relative;
 &__item {
  
 }
@@ -869,33 +1074,99 @@ font-weight: 700;
 }
 
  
+footer {
+  background: var(--dark);
+  position: relative;
 
- footer {
-   background: var(--dark);
-   position: relative;
-   height: 820px;
-  
-   .f_title {
-     color: #6c757d;
-    
-   }
-   .container {
-     background-color:white;
-     height: 640px;
-     position: absolute;
-     top: 10%;
-     bottom: 10%;
-   max-width: 1180px;
- margin-left: calc(50% - 590px);
-     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.05);
+
+  color: white;
+
+
+
+
+
+  .f_title {
+    color: #6c757d;
    
+  }
+  .container {
+
+ 
+   
+    top: 10%;
+    bottom: 10%;
 
 
-   }
- }
+
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.05);
+    @include respond-below('tablet-wide') {
+
+     box-shadow: none;
+
+    }
+ 
+ 
+}
 .footer__main {
-  display: flex;
-  flex-direction: row;
+ display: flex;
+ flex-direction: row;
+ @include respond-below('tablet-wide') {
+   display: grid;
+   grid-template-rows: 1fr 1fr;
+   width: 100vw;
+   left: 0;
+   max-height: 930px;
+ 
+
+ 
+
+   
+ 
+
+  
+ }
+ .footer__main__content {
+   &__social {
+       display: inline-flex;
+     width: 400px;
+     > * {
+       width: 50px !important; 
+       height: auto;
+     }
+   
+   }
+   @include respond-below('tablet-wide') {
+   grid-row-start: 2;
+   grid-row-end: 3;
+   display: inline-block;
+   width: 100vw;
+   max-height: 300px;
+
+ 
+
+ }}
+ .footer__main__form {
+ 
+   @include respond-below('tablet-wide') {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  justify-self: center;
+ 
+ }}
+
+
+ 
+ &__content {
+ 
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   justify-self: center;
+
+
+ }
+
+}
 
 }
 
