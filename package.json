@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "file:bootstrap",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.15.0",
     "typer-js": "^5.0.1"
   }
